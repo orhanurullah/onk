@@ -11,7 +11,7 @@
 	<groupId>com.onksoftware</groupId>
 	<artifactId>onk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>onksoftware</name>
+	<name>ONK</name>
 	<description>Spring project</description>
 	<properties>
 		<java.version>17</java.version>

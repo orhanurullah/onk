@@ -6,6 +6,7 @@ import com.onk.model.Image;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,10 +35,10 @@ public class ProductDto {
     @NotBlank(message = ValidationMessageConstant.notBlankMessage)
     private String description;
 
-    @NotBlank(message = ValidationMessageConstant.notBlankMessage)
+    @NotNull(message = ValidationMessageConstant.notBlankMessage)
     private Integer quantity;
 
-    @NotBlank(message = ValidationMessageConstant.notBlankMessage)
+    @NotNull(message = ValidationMessageConstant.notBlankMessage)
     private BigDecimal price;
 
     private BigDecimal purchasePrice;
