@@ -111,14 +111,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public DataResult<UserDto> getUser(String email){
-        if(email.equalsIgnoreCase(root)){
+        if(email.equalsIgnoreCase(root) && !Objects.requireNonNull(SecurityManager.getCurrentUser()).getEmail().equals(root)){
             return new ErrorDataResult<>(
                     messageService.getMessage("user.rootEmailQuery.message", null)
-            );
-        }
-        if(email.equals(Objects.requireNonNull(SecurityManager.getCurrentUser()).getEmail())){
-            return new ErrorDataResult<>(
-                    messageService.getMessage("user.ownEmailQuery.message", null)
             );
         }
         try{
@@ -542,6 +537,30 @@ public class UserServiceImpl implements UserService {
             );
         }
     }
+
+    @Override
+    public DataResult<?> getCurrentUser(String email) {
+       try{
+           var user = SecurityManager.getCurrentUser();
+           assert user != null;
+           if(user.getEmail().equals(email)){
+               return new SuccessDataResult<>(
+                       SecurityManager.getCurrentUser(),
+                       messageService.getMessage("token.validateUser.message", null)
+               );
+           }else{
+               return new ErrorDataResult<>(
+                       messageService.getMessage("token.notValidateUser.message", null)
+               );
+           }
+
+       }catch (Exception e){
+           return new ErrorDataResult<>(
+                   messageService.getMessage("error.message", null)
+           );
+       }
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

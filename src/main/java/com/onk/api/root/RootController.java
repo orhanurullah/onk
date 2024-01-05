@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(RouteConstants.rootBaseRoute)
+@RequestMapping(RouteConstants.primaryRoleBaseRoute)
 public class RootController {
 
     private final UserService userService;

@@ -62,8 +62,12 @@ public class User extends BaseModel implements UserDetails {
     @JoinTable(
             name = DbConstants.userRoleTableName,
             joinColumns = @JoinColumn(name = DbConstants.userRoleTableNameUserId),
-            inverseJoinColumns = @JoinColumn(name = DbConstants.userRoleTableNameRoleId))
+            inverseJoinColumns = @JoinColumn(name = DbConstants.userRoleTableNameRoleId)
+    )
     private Set<Role> roles;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Cart cart;
 
     public User(String email, String name, String lastName,
                 String password, @Nullable Boolean isActive) {

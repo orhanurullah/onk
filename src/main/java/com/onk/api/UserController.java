@@ -21,6 +21,11 @@ public class UserController {
 
     private final FileSystemStorageService storageService;
 
+    @PostMapping(value = RouteConstants.userProfileRoute)
+    public ResponseEntity<?> userProfile(@Valid @RequestBody String email){
+        return ResponseEntity.ok(userService.getCurrentUser(email));
+    }
+
     @PostMapping(value = RouteConstants.userSettingsChangePassword)
     public ResponseEntity<?> changePassword(@Valid @RequestBody ChangePasswordRequest changePasswordRequest){
         return ResponseEntity.ok(this.userService.changeUserPassword(changePasswordRequest.getPassword()));

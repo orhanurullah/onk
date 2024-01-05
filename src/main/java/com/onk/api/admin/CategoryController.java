@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(RouteConstants.adminBaseRoute + RouteConstants.categoryBaseRoute)
+@RequestMapping(RouteConstants.secondaryRoleBaseRoute + RouteConstants.categoryBaseRoute)
 public class CategoryController {
 
     private final CategoryService categoryService;

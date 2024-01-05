@@ -13,7 +13,7 @@ public class RouteConstants {
     // ROOT ROLE
     public static final String requiredRootAuthority = "hasAuthority('ROLE_ROOT')";
     // =========== users ================================== //
-    public static final String rootBaseRoute = "/api/v1/manager";
+    public static final String primaryRoleBaseRoute = "/api/v1/manager";
     public static final String userDeleteRoute = "/users/{id}/delete";
     public static final String userAddRoleRoute = "/users/{id}/add-role";
     public static final String userDeleteRoleRoute = "/users/{id}/delete-role";
@@ -30,7 +30,7 @@ public class RouteConstants {
 
     // ADMIN ROLE
     public static final String requiredAdminAuthority = "hasAuthority('ROLE_ADMIN')";
-    public static final String adminBaseRoute = "/api/v1/admin";
+    public static final String secondaryRoleBaseRoute = "/api/v1/admin";
     public static final String userCreateRoute = "/users/create";
     public static final String userFindByEmailRoute = "/users/search-by-email";
     public static final String userFindByIdRoute = "/users/search-by-id";
@@ -83,6 +83,7 @@ public class RouteConstants {
     // USER ROLE
     public static final String requiredUserAuthority = "hasAuthority('ROLE_USER')";
     public static final String userBaseRoute = "/api/v1/user";
+    public static final String userProfileRoute = "/api/v1/user/profile";
     public static final String userSettingsChangePassword = "/settings/change-password";
     public static final String userSettingsCancelRegister = "/settings/cancel-register";
     public static final String userSettingsUpdateRoute = "/settings/update-user";

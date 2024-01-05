@@ -34,7 +34,10 @@ public class Category extends BaseModel {
     private Category parentCategory;
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = DbConstants.mappedCategoryProduct)
+    @OneToMany(
+            fetch = FetchType.EAGER,
+            mappedBy = DbConstants.mappedCategoryProduct
+    )
     private List<Product> products;
 
     @Column(name = DbConstants.categoryIsActiveColumnName)

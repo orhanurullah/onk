@@ -24,7 +24,7 @@ public class Image extends BaseModel{
     private String path;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "images")
+    @ManyToMany(mappedBy = DbConstants.imageTableName)
     private List<Product> products;
 
 

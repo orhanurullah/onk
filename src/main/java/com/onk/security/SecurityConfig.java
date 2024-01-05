@@ -45,9 +45,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> configure())
                 .authorizeHttpRequests((auth) -> {
-                    auth.requestMatchers(RouteConstants.rootBaseRoute + "/**")
+                    auth.requestMatchers(RouteConstants.primaryRoleBaseRoute + "/**")
                             .hasAuthority( "ROLE_" + EntityConstants.primaryRoleName);
-                    auth.requestMatchers(RouteConstants.adminBaseRoute + "/**")
+                    auth.requestMatchers(RouteConstants.secondaryRoleBaseRoute + "/**")
                             .hasAuthority("ROLE_" + EntityConstants.secondaryRoleName);
                     auth.requestMatchers(RouteConstants.userBaseRoute + "/**")
                             .hasAuthority("ROLE_" + EntityConstants.baseRoleName);

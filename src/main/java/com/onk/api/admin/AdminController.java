@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(RouteConstants.adminBaseRoute)
+@RequestMapping(RouteConstants.secondaryRoleBaseRoute)
 public class AdminController {
 
     private final UserService userService;

@@ -67,6 +67,16 @@ public class DbConstants {
     // IMAGE
     public static final String imageTableName = "images";
     public static final String imagePathName = "path";
+    // CART
+    public static final String cartTableName = "carts";
+    public static final String cartUserColumnName = "user_id";
+    public static final String cartsProductsCartColumnName = "cart_id";
+    public static final String cartsProductsProductColumnName = "product_id";
+    public static final String cartIsActiveColumnName = "is_active";
+
+    // ORDER
+    public static final String orderTableName = "orders";
+    public static final String orderUserColumnName = "user_id";
     //OTHER CONSTANTS
     public static final int minPasswordSize = 8;
     public static final int textShortSize = 30;

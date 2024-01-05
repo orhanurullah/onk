@@ -60,7 +60,8 @@ public class Product extends BaseModel {
     @JoinTable(
             name = DbConstants.productImagesTableName,
             joinColumns = @JoinColumn(name = DbConstants.productImagesProductColumnName),
-            inverseJoinColumns = @JoinColumn(name = DbConstants.productImagesImageColumnName))
+            inverseJoinColumns = @JoinColumn(name = DbConstants.productImagesImageColumnName)
+    )
     private Set<Image> images = new HashSet<>();
 
 

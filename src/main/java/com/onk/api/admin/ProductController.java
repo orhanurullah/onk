@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@RequestMapping(RouteConstants.adminBaseRoute + RouteConstants.productRoute)
+@RequestMapping(RouteConstants.secondaryRoleBaseRoute + RouteConstants.productRoute)
 @RequiredArgsConstructor
 public class ProductController {
 

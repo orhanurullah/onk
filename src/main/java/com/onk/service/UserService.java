@@ -44,6 +44,8 @@ public interface UserService  extends UserDetailsService {
 
     DataResult<List<? extends GrantedAuthority>> getUserRole();
 
+    DataResult<?> getCurrentUser(String email);
+
     Result updateUser(UserDto userDto);
 
     Result deleteOwnUser();

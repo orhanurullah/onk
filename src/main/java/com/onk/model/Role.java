@@ -26,7 +26,7 @@ public class Role extends BaseModel {
     private String description;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = DbConstants.roleTableName)
     private Set<User> users;
 
 }
